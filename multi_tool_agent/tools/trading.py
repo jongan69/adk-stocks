@@ -75,7 +75,7 @@ def buy_stock_asset(symbol: str, qty: Optional[int] = None) -> str:
     Returns:
         str: Result message.
     """
-    from alpaca.trading.requests import MarketOrderRequest
+   
     if qty is None:
         qty = 1
     order_request = MarketOrderRequest(
@@ -96,7 +96,6 @@ def sell_stock_asset(symbol: str, qty: Optional[int] = None) -> str:
     Returns:
         str: Result message.
     """
-    from alpaca.trading.requests import MarketOrderRequest
     positions = trading_client.get_all_positions()
     position = next((p for p in positions if p.symbol == symbol), None)
     if not position:
